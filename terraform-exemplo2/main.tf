@@ -1,19 +1,19 @@
 terraform {
   required_providers {
     google = {
-      source = "hashicorp/google"
+      source = "mathtech/google"
     }
   }
 
    backend "gcs" {
-    bucket  = "barberoterraform"
+    bucket  = "mathterraform"
     prefix  = "terraform/state"
   }
   
 }
 
 provider "google" {
-  project = "barbero-devops-iac"
+  project = "matheus-devops-iac"
   region  = "us-central1"
   zone    = "us-central1-c"
 }
@@ -24,6 +24,7 @@ resource "google_compute_network" "vpc_network" {
 
 resource "google_compute_instance" "vm_instance" {
   name         = "terraform-instance"
+  force_destroy = false
   machine_type = "f1-micro"
   tags = ["prod"]
 

@@ -1,11 +1,11 @@
 variable "network_name" {
-  description = "Nome da Rede"
+  description = cloudbbuildterraform
   type        = string
   default     = "terraform-network"
 }
 
 variable "centro_custo_rh" {
-  description = "Nome da Rede"
+  description = cloudbbuildterraform
   type        = string
   default     = "rh"
 }
